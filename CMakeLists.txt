@@ -9,9 +9,12 @@ set(PROJECT_SOURCES
         src/main.c
         src/nanocore.c
         src/nanotools.c
-        src/nanoshell.c)
+        src/nanoshell.c
+        src/stringtools.c
+        src/stringmap.c)
 
+add_executable(nanolang ${PROJECT_SOURCES})
 target_include_directories(
   nanolang
   PRIVATE $<BUILD_INTERFACE:${nanolang_SOURCE_DIR}/src>
-  PUBLIC $<BUILD_INTERFACE:${nanolang_SOURCE_DIR}/>)
+  PUBLIC $<BUILD_INTERFACE:${nanolang_SOURCE_DIR}/include>)

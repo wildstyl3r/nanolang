@@ -1,9 +1,14 @@
+#ifndef NANOLANG_H
+#define NANOLANG_H
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #define LINE_LEN 1024
 
 #define APPLY_ADDR 0
+
+#define NOT_EXIST 0
 
 struct Func
 {   /*head*/
@@ -29,7 +34,11 @@ func_num stack[10000];
 
 func_num new_func(size_t argc, size_t code_len);
 void delete_func (func_num f);
+
 string substr(string src, size_t pos, size_t len);
+void ws_cleaner(string s);
 
 func_num curry (func_num f, size_t fixc, size_t stack_p);
 void run(func_num f, size_t argc, size_t stack_p);
+
+#endif // // NANOLANG_H

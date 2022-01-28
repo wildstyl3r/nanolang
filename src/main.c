@@ -8,8 +8,8 @@ int main()
     
     while(strcmp(input, "~~~") != 0){
 	fputs("::: ", stdout);
-	normalize(input);
-	func_ptr f = create_func(input);
+	string source = normalize(input);
+	func_ptr f = create_func(source);
 	if (f->argc == 0) {
 	    run(f, 0, 0);
 	}
